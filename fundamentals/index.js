@@ -20,11 +20,11 @@ let markHeight = 1.69;
 let markBMI = markWeight / markHeight ** 2;
 console.log(markBMI); // 27.3099
 
-let johnWeight = 95;
-let johnHeight = 1.88;
+let johnWeight = 92;
+let johnHeight = 1.95;
 
 let johnBMI = johnWeight / johnHeight ** 2;
-console.log(johnBMI); // 26.8786
+console.log(johnBMI); // 24.1946
 
 let markHigherBMI = markBMI > johnBMI;
 console.log(markHigherBMI);

@@ -76,6 +76,11 @@ TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 GOOD LUCK 😀
 */
 
+const dolphins = '';
+const koalas = '';
+
+let score = 0;
+
 ////////////////////////////////////
 // Coding Challenge #4
 

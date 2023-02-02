@@ -98,13 +98,14 @@ if (dolphinScoreBonus > koalaScoreBonus && dolphinScoreBonus >= minScore) {
   console.log('Dolphones win');
 } else if (koalaScoreBonus > dolphinScoreBonus && koalaScoreBonus >= minScore) {
   console.log("Koala's win");
-} else {
+} else if (
   dolphinScoreBonus === koalaScoreBonus &&
-    dolphinScoreBonus >= minScore &&
-    koalaScoreBonus >= minScore;
-}
-{
+  dolphinScoreBonus >= minScore &&
+  koalaScoreBonus >= minScore
+) {
   console.log("It's a draw");
+} else {
+  console.log('No one wins!');
 }
 
 ////////////////////////////////////

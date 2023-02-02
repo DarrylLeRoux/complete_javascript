@@ -36,3 +36,30 @@ if (height) {
   console.log('Height is UNDEFINED'); //prints to console
 }
 ```
+
+## Equality Operators
+
+```js
+// Strict eqaulity operator
+// Does not perform type coercion
+const age = 18;
+if (age === 18) console.log('user age is 18'); //true
+```
+
+```js
+// Loose equality operator
+// Performs type coercion
+if ('18' == 18) console.log('user age is 18'); //true
+```
+
+```js
+// Strict ineqaulity operator
+// Does not perform type coercion
+if (age !== 18) console.log('user is not 18'); //true
+```
+
+```js
+// Loose inequality operator
+// Performs type coercion
+if ('18' != 18) console.log('user is not 18'); //false
+```

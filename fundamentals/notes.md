@@ -64,4 +64,21 @@ if (age !== 18) console.log('user is not 18'); //true
 if ('18' != 18) console.log('user is not 18'); //false
 ```
 
-## Boolean Logic
+## Logical Operations
+
+```js
+const hasDriversLicence = true;
+const hasGoodVision = false;
+
+hasDriversLicence && hasGoodVision; // false
+hasDriversLicense || hasGoodVision; // true
+!hasDriversLicense; // false
+```
+
+```js
+if (hasDriversLicense && hasGoodVision) {
+  console.log('You can drive'); //executes if both are true
+} else {
+  console.log('You cannot drive');
+}
+```

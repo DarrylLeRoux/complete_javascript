@@ -63,3 +63,5 @@ if (age !== 18) console.log('user is not 18'); //true
 // Performs type coercion
 if ('18' != 18) console.log('user is not 18'); //false
 ```
+
+## Boolean Logic

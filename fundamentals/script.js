@@ -66,20 +66,46 @@ There are two gymnastics teams, Dolphins and Koalas. They compete against each o
 1. Calculate the average score for each team, using the test data below
 2. Compare the team's average scores to determine the winner of the competition, and print it to the console. Don't forget that there can be a draw, so test for that as well (draw means they have the same average score).
 
-3. BONUS 1: Include a requirement for a minimum score of 100. With this rule, a team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. HINT: Use a logical operator to test for minimum score, as well as multiple else-if blocks 😉
-4. BONUS 2: Minimum score also applies to a draw! So a draw only happens when both teams have the same score and both have a score greater or equal 100 points. Otherwise, no team wins the trophy.
+3. BONUS : Minimum score also applies to a draw! So a draw only happens when both teams have the same score and both have a score greater or equal 100 points. Otherwise, no team wins the trophy.
 
 TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
-TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
-TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+TEST DATA BONUS: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
 
 GOOD LUCK 😀
 */
 
-const dolphins = '';
-const koalas = '';
+let dolphinScore = 0;
+let koalaScore = 0;
 
-let score = 0;
+dolphinScore = (96 + 108 + 89) / 3;
+koalaScore = (88 + 91 + 110) / 3;
+
+if (dolphinScore > koalaScore) {
+  console.log('Dolphones win');
+} else if (dolphinScore === koalaScore) {
+  console.log("It's a draw");
+} else {
+  console.log("Koala's win");
+}
+
+// Bonus 1
+let dolphinScoreBonus = (97 + 112 + 101) / 3;
+let koalaScoreBonus = (109 + 95 + 123) / 3;
+
+let minScore = 100;
+
+if (dolphinScoreBonus > koalaScoreBonus && dolphinScoreBonus >= minScore) {
+  console.log('Dolphones win');
+} else if (koalaScoreBonus > dolphinScoreBonus && koalaScoreBonus >= minScore) {
+  console.log("Koala's win");
+} else {
+  dolphinScoreBonus === koalaScoreBonus &&
+    dolphinScoreBonus >= minScore &&
+    koalaScoreBonus >= minScore;
+}
+{
+  console.log("It's a draw");
+}
 
 ////////////////////////////////////
 // Coding Challenge #4

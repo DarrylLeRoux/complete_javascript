@@ -1,7 +1,8 @@
 'use strict';
 
 /////////////////////////////////
-//////// FUNCTIONS /////////////
+//////// FUNCTIONS //////////////
+/////////////////////////////////
 
 function logger() {
   console.log('My name is Darryl');
@@ -21,6 +22,7 @@ const appleOrangeJuice = fruitProcessor(2, 3);
 console.log(appleOrangeJuice);
 
 // Declaration vs Expression
+/////////////////////////////
 
 // Function Declaration
 function calcAge1(birthYear) {
@@ -30,8 +32,27 @@ function calcAge1(birthYear) {
 console.log(calcAge1(1982));
 
 // Function Expression
+// Produces a value (calcAge2 is a variable with a value)
 const calAge2 = function (birthYear) {
   return 2023 - birthYear;
 };
 const age2 = calAge2(1982);
 console.log(age2);
+
+// Arrow functions
+/////////////////////////////
+
+const calcAge3 = (birthYear) => {
+  return 2023 - birthYear;
+};
+
+const age3 = calcAge3(1982);
+console.log(age3);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const age = 2023 - birthYear;
+  const retirement = 65 - age;
+  return `${firstName} retires in ${retirement} years`;
+};
+const retirementAge = yearsUntilRetirement(1982, 'Darryl');
+console.log(retirementAge);

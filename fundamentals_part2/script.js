@@ -73,3 +73,21 @@ function fruitProcessor(apples, oranges) {
 }
 
 console.log(fruitProcessor(2, 3));
+
+// review
+
+function calcAgeFunction(birthYear) {
+  const age = 2023 - birthYear;
+  return age;
+}
+
+const yearsUntilRetirement2 = (birthYear, firstName) => {
+  const calcAgeValue = calcAgeFunction(birthYear);
+  const retirement = 65 - calcAgeValue;
+
+  return retirement > 0
+    ? `${firstName} retires in ${retirement} years`
+    : `${firstName} retired ${Math.abs(retirement)} years ago`;
+};
+console.log(yearsUntilRetirement2(1982, 'Darryl'));
+console.log(yearsUntilRetirement2(1930, 'Darryl'));

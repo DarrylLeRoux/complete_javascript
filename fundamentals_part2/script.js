@@ -152,5 +152,5 @@ const checkWinner = (avgDolphins, avgKoalas) => {
   }
 };
 
-console.log(checkWinner(avgDolphins, avgKoalas)); // koalas win
+console.log(checkWinner(avgDolphins, avgKoalas)); // No one wins
 console.log(checkWinner(avgDolphins2, avgKoalas2)); // Dolphins win

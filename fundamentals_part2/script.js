@@ -143,9 +143,13 @@ const avgDolphins2 = calcAverage(85, 54, 41);
 const avgKoalas2 = calcAverage(23, 34, 27);
 
 const checkWinner = (avgDolphins, avgKoalas) => {
-  return avgDolphins >= 2 * avgKoalas
-    ? `Dolphins win (${avgDolphins} vs ${avgKoalas})`
-    : `Koalas win (${avgKoalas} vs ${avgDolphins})`;
+  if (avgDolphins >= 2 * avgKoalas) {
+    return `Dolphins win (${avgDolphins} vs ${avgKoalas})`;
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    return `Koalas win (${avgKoalas} vs ${avgDolphins})`;
+  } else {
+    return 'No one wins';
+  }
 };
 
 console.log(checkWinner(avgDolphins, avgKoalas)); // koalas win

@@ -19,3 +19,13 @@ console.log(typeof language);
 language = 'English';
 // const country = 'South Africa'; // error
 // const continent = 'Africa'; // error
+
+// CHALLENGE ONE
+let markMass = 78;
+let johnMass = 92;
+
+let markHeight = 1.69;
+let johnHeight = 1.95;
+
+let markBmi = markMass / (markHeight * markHeight);
+console.log(markBmi);

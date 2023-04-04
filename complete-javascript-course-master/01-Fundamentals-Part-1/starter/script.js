@@ -29,3 +29,23 @@ let johnHeight = 1.95;
 
 let markBmi = markMass / (markHeight * markHeight);
 console.log(markBmi);
+let johnBmi = johnMass / (johnHeight * johnHeight);
+console.log(johnBmi);
+
+let markHigherBmi = markBmi > johnBmi;
+console.log(markHigherBmi);
+
+// CHALLENGE TWO
+if (markBmi > johnBmi) {
+  console.log(
+    `Mark's BMI (${markBmi.toFixed(
+      2
+    )}) is higher than John's (${johnBmi.toFixed(2)})`
+  );
+} else {
+  console.log(
+    `John's BMI (${johnBmi.toFixed(
+      2
+    )}) is higher than Mark's (${johnBmi.toFixed(2)})`
+  );
+}

@@ -49,3 +49,43 @@ if (markBmi > johnBmi) {
     )}) is higher than Mark's (${johnBmi.toFixed(2)})`
   );
 }
+
+const hasDriversLicense = true;
+const hasGoodVision = false;
+
+const shouldDrive = hasDriversLicense && hasGoodVision; // false
+
+if (shouldDrive) {
+  console.log('Sarah is able to drive');
+} else {
+  console.log('Someone else should drive'); // prints to console
+}
+
+const isTired = true;
+console.log(hasDriversLicense || hasGoodVision || isTired); // true
+console.log(hasDriversLicense && hasGoodVision && isTired); // false
+
+///////////////////////////////
+////// CODING CHALLENGE 3 /////
+///////////////////////////////
+
+dolphineScore = [96, 108, 89];
+koalaScore = [88, 91, 110];
+
+dolphineFullScores = dolphineScore.reduce((acc, score) => {
+  return acc + score;
+});
+console.log((dolphineAverageScore = dolphineFullScores / dolphineScore.length));
+
+koalaFullScores = koalaScore.reduce((acc, score) => {
+  return acc + score;
+});
+console.log((koalaAverageScore = koalaFullScores / koalaScore.length));
+
+if (koalaAverageScore > dolphineAverageScore) {
+  `Koalas have the higher average score with ${koalaAverageScore} to the Dolphines who had ${dolphineAverageScore}`;
+} else {
+  console.log(
+    `Dolphines have the higher average score with ${dolphineAverageScore} to the Koalas who had ${koalaAverageScore}`
+  );
+}

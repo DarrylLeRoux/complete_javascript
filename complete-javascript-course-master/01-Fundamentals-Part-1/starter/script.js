@@ -135,3 +135,29 @@ if (day === 'monday') {
 } else {
   console.log('Not a valid day');
 }
+
+// CODING CHALLENGE 3
+
+// tip 15% of the bill if the bill is between 50 and 300;
+// if it is different, tip 20%
+// print `The bill was 275, the tip was 41.25 and the total value was 316.25
+// test data of bill value = 275, 40, 430
+
+let tip;
+let bill = 275;
+bill >= 50 && bill <= 300
+  ? console.log(
+      `The bill was ${bill}, the tip was ${(tip =
+        bill * 0.15)} and the total was ${tip + bill}`
+    )
+  : console.log(
+      `The bill was ${bill}, the tip was ${(tip =
+        bill * 0.2)} and the total was ${tip + bill}`
+    );
+
+// Alternative way
+bill = 50;
+tip = bill <= 300 % bill >= 50 ? bill * 0.15 : bill * 0.2;
+console.log(
+  `The bill was ${bill}, the tip was ${tip} and the total was ${bill + tip}`
+);

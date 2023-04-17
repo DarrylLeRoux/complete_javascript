@@ -75,12 +75,14 @@ koalaScore = [88, 91, 110];
 dolphineFullScores = dolphineScore.reduce((acc, score) => {
   return acc + score;
 });
-console.log((dolphineAverageScore = dolphineFullScores / dolphineScore.length));
+let dolphineAverageScore = dolphineFullScores / dolphineScore.length;
+console.log(dolphineAverageScore);
 
 koalaFullScores = koalaScore.reduce((acc, score) => {
   return acc + score;
 });
-console.log((koalaAverageScore = koalaFullScores / koalaScore.length));
+let koalaAverageScore = koalaFullScores / koalaScore.length;
+console.log(koalaAverageScore);
 
 if (koalaAverageScore > dolphineAverageScore) {
   `Koalas have the higher average score with ${koalaAverageScore} to the Dolphines who had ${dolphineAverageScore}`;
@@ -88,4 +90,48 @@ if (koalaAverageScore > dolphineAverageScore) {
   console.log(
     `Dolphines have the higher average score with ${dolphineAverageScore} to the Koalas who had ${koalaAverageScore}`
   );
+}
+
+// Switch Statement
+const day = 'thursday';
+
+// Compares argument (day) with the case by means of strict equality ===
+switch (day) {
+  case 'monday':
+    console.log('Plan course structure');
+    console.log('Go to coding meetup');
+    break;
+  case 'tuesday':
+    console.log('Prepare theory videos');
+    break;
+  // If you use the same result for two cases, you can just enter the additional cases right after it
+  case 'wednesday':
+  case 'thursday':
+    console.log('Write code examples');
+    break;
+  case 'friday':
+    console.log('Record videos');
+  case 'saturday':
+  case 'sunday':
+    console.log('Enjoy the weekend');
+    break;
+  // You can have a default block of code run
+  default:
+    console.log('Not a valid day');
+}
+
+// Same example in an if/else statement
+if (day === 'monday') {
+  console.log('Plan course structure');
+  console.log('Go to coding meetup');
+} else if (day === 'tuesday') {
+  console.log('Prepare theory videos');
+} else if (day === 'wednesday' || day === 'thursday') {
+  console.log('Write code examples');
+} else if (day === 'friday') {
+  console.log('Record videos');
+} else if (day === 'saturday' || day == 'sunday') {
+  console.log('Enjoy the weekend');
+} else {
+  console.log('Not a valid day');
 }

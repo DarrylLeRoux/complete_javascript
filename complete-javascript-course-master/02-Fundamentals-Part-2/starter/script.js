@@ -142,49 +142,77 @@ const passTest = true;
 // ARRAYS //
 ////////////
 
-const friend1 = 'Michael';
-const friend2 = 'Steven';
-const friend3 = 'Peter';
+// const friend1 = 'Michael';
+// const friend2 = 'Steven';
+// const friend3 = 'Peter';
 
-const friends = [friend1, friend2, friend3];
-console.log(friends);
+// const friends = [friend1, friend2, friend3];
+// console.log(friends);
 
-// create with the new keyword
-// const years = new Array(1992, 1984, 2008, 2020);
+// // create with the new keyword
+// // const years = new Array(1992, 1984, 2008, 2020);
 
-// loggin an array item
-console.log(friends[0]);
+// // loggin an array item
+// console.log(friends[0]);
 
-// get the number of items in an array
-console.log(friends.length);
+// // get the number of items in an array
+// console.log(friends.length);
 
-// get last item of an array
-// friends.length = 3 and then subtract 1 giving you the item at the last position [2]
-console.log(friends[friends.length - 1]);
+// // get last item of an array
+// // friends.length = 3 and then subtract 1 giving you the item at the last position [2]
+// console.log(friends[friends.length - 1]);
 
-// mutate the array
-friends[2] = 'Jay';
-console.log(friends); // ['Michael', 'Steven', 'Jay']
+// // mutate the array
+// friends[2] = 'Jay';
+// console.log(friends); // ['Michael', 'Steven', 'Jay']
 
-// holds all types
-const jonas = ['Jonas', 'Schmedtmann', 2037 - 1991];
-console.log(`${jonas[0]} ${jonas[1]} is ${jonas[2]} years old`);
+// // holds all types
+// const jonas = ['Jonas', 'Schmedtmann', 2037 - 1991];
+// console.log(`${jonas[0]} ${jonas[1]} is ${jonas[2]} years old`);
 
-// exercise
-const calcAge = function (birthYear) {
-  return 2037 - birthYear;
-};
+// // exercise
+// const calcAge = function (birthYear) {
+//   return 2037 - birthYear;
+// };
 
-const years = [1990, 1967, 2002, 2010, 2018];
+// const years = [1990, 1967, 2002, 2010, 2018];
 
-const age1 = calcAge(years[0]);
-const age2 = calcAge(years[1]);
-const age3 = calcAge(years[years.length - 1]);
-console.log(age1, age2, age3);
+// const age1 = calcAge(years[0]);
+// const age2 = calcAge(years[1]);
+// const age3 = calcAge(years[years.length - 1]);
+// console.log(age1, age2, age3);
 
-const ages = [
-  calcAge(years[0]),
-  calcAge(years[1]),
-  calcAge(years[years.length - 1]),
-];
-console.log(ages);
+// const ages = [
+//   calcAge(years[0]),
+//   calcAge(years[1]),
+//   calcAge(years[years.length - 1]),
+// ];
+// console.log(ages);
+
+///////////////////
+// ARRAY METHODS //
+///////////////////
+
+const friends = ['Michael', 'Steven', 'Peter'];
+
+// Push an item to the end of the array
+friends.push('Jonas');
+console.log(friends); // ['Michael', 'Steven', 'Peter', 'Jonas']
+
+// UnShift pushes an item to the beginning of the array
+friends.unshift('John');
+console.log(friends); // ['John', 'Michael', 'Steven', 'Peter', 'Jonas']
+
+// Pop removes an element from the end of the array
+friends.pop();
+console.log(friends); // ['John', 'Michael', 'Steven', 'Peter']
+
+// Shift removes an element from the beginning of the array
+friends.shift();
+console.log(friends); // ['Michael', 'Steven', 'Peter']
+
+// Find a position of an element
+console.log(friends.indexOf('Steven')); // 1
+
+// Return a boolean if an element is in the array
+console.log(friends.includes('Steven')); // true

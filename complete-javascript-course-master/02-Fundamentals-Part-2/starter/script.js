@@ -216,3 +216,24 @@ console.log(friends.indexOf('Steven')); // 1
 
 // Return a boolean if an element is in the array
 console.log(friends.includes('Steven')); // true
+
+//////////////////////////////
+//// CODING CHALLENGE TWO ////
+//////////////////////////////
+// let bills = [125, 555, 44];
+// let bill = bills[0];
+
+// let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+let bills = [125, 555, 44];
+let tips = [];
+let total = [];
+
+bills.map((bill) => {
+  let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+  tips.push(tip);
+  total.push(bill + tip);
+  return;
+});
+
+console.log(tips);
+console.log(total);

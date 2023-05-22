@@ -311,38 +311,42 @@ console.log(total);
 /////// CODING CHALLENGE 3 ///////
 //////////////////////////////////
 
-const markObj = {
-  fullName: 'Mark Miller',
-  height: 1.69,
-  mass: 78,
-  calcBMI: function () {
-    this.BMI = this.mass / (this.height * this.height);
-    return this.BMI;
-  },
-};
+// const markObj = {
+//   fullName: 'Mark Miller',
+//   height: 1.69,
+//   mass: 78,
+//   calcBMI: function () {
+//     this.BMI = this.mass / (this.height * this.height);
+//     return this.BMI;
+//   },
+// };
 
-const johnObj = {
-  fullName: 'John Smith',
-  height: 1.95,
-  mass: 92,
-  calcBMI: function () {
-    this.BMI = this.mass / (this.height * this.height);
-    return this.BMI;
-  },
-};
-console.log('mark BMI: ' + markObj.calcBMI().toFixed(2));
-console.log('John BMI: ' + johnObj.calcBMI().toFixed(2));
-markObj.calcBMI();
-johnObj.calcBMI();
+// const johnObj = {
+//   fullName: 'John Smith',
+//   height: 1.95,
+//   mass: 92,
+//   calcBMI: function () {
+//     this.BMI = this.mass / (this.height * this.height);
+//     return this.BMI;
+//   },
+// };
+// console.log('mark BMI: ' + markObj.calcBMI().toFixed(2));
+// console.log('John BMI: ' + johnObj.calcBMI().toFixed(2));
+// markObj.calcBMI();
+// johnObj.calcBMI();
 
-console.log(
-  `${
-    markObj.BMI > johnObj.BMI
-      ? `${markObj.fullName} has a higher BMI (${markObj.BMI.toFixed(
-          2
-        )}) than ${johnObj.fullName} (${johnObj.BMI.toFixed(2)})`
-      : `${johnObj.fullName} has a higher BMI (${johnObj.BMI.toFixed(
-          2
-        )}) than ${markObj.fullName} (${markObj.BMI.toFixed(2)})`
-  }`
-);
+// console.log(
+//   `${
+//     markObj.BMI > johnObj.BMI
+//       ? `${markObj.fullName} has a higher BMI (${markObj.BMI.toFixed(
+//           2
+//         )}) than ${johnObj.fullName} (${johnObj.BMI.toFixed(2)})`
+//       : `${johnObj.fullName} has a higher BMI (${johnObj.BMI.toFixed(
+//           2
+//         )}) than ${markObj.fullName} (${markObj.BMI.toFixed(2)})`
+//   }`
+// );
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights, repetition ${rep}`);
+}

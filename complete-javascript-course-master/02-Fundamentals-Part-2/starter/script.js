@@ -242,21 +242,21 @@ console.log(total);
 //// OBJECTS ////
 /////////////////
 
-const jonas = {
-  firstName: 'Jonas',
-  lastName: 'Schmedtmann',
-  age: 2037 - 1991,
-  job: 'teacher',
-  friends: ['Michael', 'Peter', 'Steven'],
-};
+// const jonas = {
+//   firstName: 'Jonas',
+//   lastName: 'Schmedtmann',
+//   age: 2037 - 1991,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven'],
+// };
 
-console.log(jonas.lastName);
-console.log(jonas['firstName']);
+// console.log(jonas.lastName);
+// console.log(jonas['firstName']);
 
-// can take an expression with bracket notation
-const nameKey = 'Name';
-console.log(jonas['first' + nameKey]);
-console.log(jonas['last' + nameKey]);
+// // can take an expression with bracket notation
+// const nameKey = 'Name';
+// console.log(jonas['first' + nameKey]);
+// console.log(jonas['last' + nameKey]);
 
 // const interestedIn = prompt(
 //   'What do you want to know about Jonas? Choose between firstName, lastName, age, job and friends'
@@ -272,10 +272,37 @@ console.log(jonas['last' + nameKey]);
 // }
 
 // assigning new keys
-jonas.location = 'Portugal';
-jonas['twitter'] = '@jonasschmedtman';
-console.log(jonas);
+// jonas.location = 'Portugal';
+// jonas['twitter'] = '@jonasschmedtman';
+// console.log(jonas);
 
-console.log(
-  `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is ${jonas.friends[0]}`
-);
+// console.log(
+//   `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is ${jonas.friends[0]}`
+// );
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  birthYear: 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriversLicense: false,
+  // calcAge: function (birthYear) {
+  //   return 2023 - birthYear;
+  // },
+  calcAge: function () {
+    this.age = 2023 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    } and has ${this.hasDriversLicense ? `a` : `no`} drivers license.`;
+  },
+};
+
+// console.log(jonas.calcAge()); // 32
+console.log(jonas.age); // 32
+
+console.log(jonas.getSummary());

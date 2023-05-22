@@ -280,29 +280,69 @@ console.log(total);
 //   `${jonas.firstName} has ${jonas.friends.length} friends and his best friend is ${jonas.friends[0]}`
 // );
 
-const jonas = {
-  firstName: 'Jonas',
-  lastName: 'Schmedtmann',
-  birthYear: 1991,
-  job: 'teacher',
-  friends: ['Michael', 'Peter', 'Steven'],
-  hasDriversLicense: false,
-  // calcAge: function (birthYear) {
-  //   return 2023 - birthYear;
-  // },
-  calcAge: function () {
-    this.age = 2023 - this.birthYear;
-    return this.age;
-  },
+// const jonas = {
+//   firstName: 'Jonas',
+//   lastName: 'Schmedtmann',
+//   birthYear: 1991,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven'],
+//   hasDriversLicense: false,
+//   // calcAge: function (birthYear) {
+//   //   return 2023 - birthYear;
+//   // },
+//   calcAge: function () {
+//     this.age = 2023 - this.birthYear;
+//     return this.age;
+//   },
 
-  getSummary: function () {
-    return `${this.firstName} is a ${this.calcAge()}-year old ${
-      this.job
-    } and has ${this.hasDriversLicense ? `a` : `no`} drivers license.`;
+//   getSummary: function () {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${
+//       this.job
+//     } and has ${this.hasDriversLicense ? `a` : `no`} drivers license.`;
+//   },
+// };
+
+// // console.log(jonas.calcAge()); // 32
+// console.log(jonas.age); // 32
+
+// console.log(jonas.getSummary());
+
+//////////////////////////////////
+/////// CODING CHALLENGE 3 ///////
+//////////////////////////////////
+
+const markObj = {
+  fullName: 'Mark Miller',
+  height: 1.69,
+  mass: 78,
+  calcBMI: function () {
+    this.BMI = this.mass / (this.height * this.height);
+    return this.BMI;
   },
 };
 
-// console.log(jonas.calcAge()); // 32
-console.log(jonas.age); // 32
+const johnObj = {
+  fullName: 'John Smith',
+  height: 1.95,
+  mass: 92,
+  calcBMI: function () {
+    this.BMI = this.mass / (this.height * this.height);
+    return this.BMI;
+  },
+};
+console.log('mark BMI: ' + markObj.calcBMI().toFixed(2));
+console.log('John BMI: ' + johnObj.calcBMI().toFixed(2));
+markObj.calcBMI();
+johnObj.calcBMI();
 
-console.log(jonas.getSummary());
+console.log(
+  `${
+    markObj.BMI > johnObj.BMI
+      ? `${markObj.fullName} has a higher BMI (${markObj.BMI.toFixed(
+          2
+        )}) than ${johnObj.fullName} (${johnObj.BMI.toFixed(2)})`
+      : `${johnObj.fullName} has a higher BMI (${johnObj.BMI.toFixed(
+          2
+        )}) than ${markObj.fullName} (${markObj.BMI.toFixed(2)})`
+  }`
+);

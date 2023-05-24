@@ -193,29 +193,29 @@ const passTest = true;
 // ARRAY METHODS //
 ///////////////////
 
-const friends = ['Michael', 'Steven', 'Peter'];
+// const friends = ['Michael', 'Steven', 'Peter'];
 
-// Push an item to the end of the array
-friends.push('Jonas');
-console.log(friends); // ['Michael', 'Steven', 'Peter', 'Jonas']
+// // Push an item to the end of the array
+// friends.push('Jonas');
+// console.log(friends); // ['Michael', 'Steven', 'Peter', 'Jonas']
 
-// UnShift pushes an item to the beginning of the array
-friends.unshift('John');
-console.log(friends); // ['John', 'Michael', 'Steven', 'Peter', 'Jonas']
+// // UnShift pushes an item to the beginning of the array
+// friends.unshift('John');
+// console.log(friends); // ['John', 'Michael', 'Steven', 'Peter', 'Jonas']
 
-// Pop removes an element from the end of the array
-friends.pop();
-console.log(friends); // ['John', 'Michael', 'Steven', 'Peter']
+// // Pop removes an element from the end of the array
+// friends.pop();
+// console.log(friends); // ['John', 'Michael', 'Steven', 'Peter']
 
-// Shift removes an element from the beginning of the array
-friends.shift();
-console.log(friends); // ['Michael', 'Steven', 'Peter']
+// // Shift removes an element from the beginning of the array
+// friends.shift();
+// console.log(friends); // ['Michael', 'Steven', 'Peter']
 
-// Find a position of an element
-console.log(friends.indexOf('Steven')); // 1
+// // Find a position of an element
+// console.log(friends.indexOf('Steven')); // 1
 
-// Return a boolean if an element is in the array
-console.log(friends.includes('Steven')); // true
+// // Return a boolean if an element is in the array
+// console.log(friends.includes('Steven')); // true
 
 //////////////////////////////
 //// CODING CHALLENGE TWO ////
@@ -224,19 +224,19 @@ console.log(friends.includes('Steven')); // true
 // let bill = bills[0];
 
 // let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-let bills = [125, 555, 44];
-let tips = [];
-let total = [];
+// let bills = [125, 555, 44];
+// let tips = [];
+// let total = [];
 
-bills.map((bill) => {
-  let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-  tips.push(tip);
-  total.push(bill + tip);
-  return;
-});
+// bills.map((bill) => {
+//   let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+//   tips.push(tip);
+//   total.push(bill + tip);
+//   return;
+// });
 
-console.log(tips);
-console.log(total);
+// console.log(tips);
+// console.log(total);
 
 /////////////////
 //// OBJECTS ////
@@ -347,6 +347,95 @@ console.log(total);
 //   }`
 // );
 
-for (let rep = 1; rep <= 10; rep++) {
-  console.log(`Lifting weights, repetition ${rep}`);
+/////////////////
+///// LOOPS /////
+/////////////////
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights, repetition ${rep}`);
+// }
+
+// const jonas = [
+//   'Jonas',
+//   'Schmedtmann',
+//   2037 - 1991,
+//   'teacher',
+//   ['Michael', 'Peter', 'Steven'],
+// ];
+
+// const types = [];
+
+// for (let i = 0; i < jonas.length; i++) {
+//   console.log(jonas[i], typeof jonas[i]);
+
+//   // filling an array
+//   // types[i] = typeof jonas[i];
+
+//   // push to an array
+//   types.push(typeof jonas[i]);
+// }
+// console.log(types);
+
+// // Calculate ages with a for loop
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2023 - years[i]);
+// }
+// console.log(ages);
+
+// // continue a loop
+// console.log('---- ONLY STRINGS ----');
+// for (let i = 0; i < jonas.length; i++) {
+//   if (typeof jonas[i] !== 'string') continue;
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// // break a loop
+// console.log('---- BREAK WITH NUMBERS ----');
+// for (let i = 0; i < jonas.length; i++) {
+//   // breaks when the condition is found
+//   // does not return the condition
+//   if (typeof jonas[i] === 'number') break;
+//   console.log(jonas[i], typeof jonas[i]);
+// }
+
+// Loop through an array in reverse
+// const jonas = [
+//   'Jonas',
+//   'Schmedtmann',
+//   2037 - 1991,
+//   'teacher',
+//   ['Michael', 'Peter', 'Steven'],
+// ];
+
+// for (let i = jonas.length - 1; i >= 0; i--) {
+//   console.log(jonas[i]);
+// }
+
+// // Loops within loops
+// for (let excercise = 1; excercise < 4; excercise++) {
+//   console.log(`-----STARTING EXCERCISE ${excercise}`);
+//   // This loop will run to completion
+//   // When this ends, the loop starts again with the excercise
+//   for (let rep = 1; rep < 6; rep++) {
+//     console.log(`rep ${rep}`);
+//   }
+// }
+
+// While loops - don't need to depend on a counter
+let rep = 1;
+while (rep <= 10) {
+  console.log(`${rep}`);
+  rep++;
+}
+
+// Roll a dice until you roll a 6
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log('You rolled a 6, and the loop ended');
 }

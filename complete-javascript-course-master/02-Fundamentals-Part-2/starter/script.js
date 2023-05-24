@@ -425,17 +425,49 @@ const passTest = true;
 // }
 
 // While loops - don't need to depend on a counter
-let rep = 1;
-while (rep <= 10) {
-  console.log(`${rep}`);
-  rep++;
+// let rep = 1;
+// while (rep <= 10) {
+//   console.log(`${rep}`);
+//   rep++;
+// }
+
+// // Roll a dice until you roll a 6
+// let dice = Math.trunc(Math.random() * 6) + 1;
+
+// while (dice !== 6) {
+//   console.log(`You rolled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   if (dice === 6) console.log('You rolled a 6, and the loop ended');
+// }
+
+//////////////////////////////////
+/////// CODING CHALLENGE 4 ///////
+//////////////////////////////////
+const calcTip = (bill) => {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++) {
+  let tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
+
+  console.log(
+    `The Bill is ${bills[i]}, the tip is ${tip} and the total is ${(
+      bills[i] + tip
+    ).toFixed(2)}`
+  );
 }
 
-// Roll a dice until you roll a 6
-let dice = Math.trunc(Math.random() * 6) + 1;
+const calcAverage = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    (sum += arr[i]) / arr.length;
+  }
+  return sum / arr.length;
+};
 
-while (dice !== 6) {
-  console.log(`You rolled a ${dice}`);
-  dice = Math.trunc(Math.random() * 6) + 1;
-  if (dice === 6) console.log('You rolled a 6, and the loop ended');
-}
+console.log(calcAverage(totals));

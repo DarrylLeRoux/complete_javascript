@@ -27,3 +27,13 @@ const restaurant = {
     },
   },
 };
+
+/////////////////////
+/// DESTRUCTURING ///
+/////////////////////
+const arr = [2, 3, 4];
+const [x, y, z] = arr;
+console.log(x, y, z); // 2, 3, 4
+
+const [first, , third] = restaurant.categories;
+console.log(first, third);

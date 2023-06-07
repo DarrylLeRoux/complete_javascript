@@ -279,6 +279,7 @@ console.table(rest2);
 ///////////////////
 /// CHALLENGE 1 ///
 ///////////////////
+/*
 // We're building a football betting app (soccer for my American friends 😅)!
 
 // Suppose we get data from a web service about a certain game (below). In this challenge we're gonna work with the data. So here are your tasks:
@@ -294,3 +295,75 @@ console.table(rest2);
 // TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
 
 // GOOD LUCK 😀
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// 1
+const [players1, players2] = game.players;
+console.log(players1);
+console.log(players2);
+// 2
+const [gk, ...fieldPlayers] = players1;
+console.log(gk);
+console.log(fieldPlayers);
+// 3
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+// 4
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
+// 5
+const { team1, x: draw, team2 } = game.odds;
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+console.log(team1);
+console.log(draw);
+console.log(team2);
+// 6
+const printGoals = function (...players) {
+  console.log(`${players.length} goals scored`);
+};
+printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals(...game.scored);
+// 7
+team1 < team2 && console.log('Team 1 is more likely to win');
+*/

@@ -1,5 +1,20 @@
 'use strict';
 
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -15,20 +30,8 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  // ES6 enhanced object literals from ln3
+  openingHours,
 
   orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
     console.log(
@@ -367,3 +370,55 @@ printGoals(...game.scored);
 // 7
 team1 < team2 && console.log('Team 1 is more likely to win');
 */
+///////////////////
+/// FOR OF LOOP ///
+///////////////////
+/*
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+// To get index as well with an iterator with entries()
+// entries() gives the index and the item : entries(i, item)
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+// If menu.entries returns an array, we can destructure it
+for (const [i, item] of menu.entries()) {
+  console.log(`${i + 1}: ${item}`);
+}
+*/
+/////////////////////////
+/// OPTIONAL CHAINING ///
+/////////////////////////
+
+console.log(restaurant.openingHours.mon); // undefined
+// if you took this to a deeper level it would return a TypeError
+// restaurant.openingHours.mon.open - this is in essence saying undefined.mon
+
+// WITHOUT Optional chaining
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHJours.mon.open);
+
+// WITH Optional chaining
+// check to see if a certain property exists or not
+// if it does not exist, it will return undefined immediately
+// 1 - Check if there is a .openingHours on the restaurant object
+// 2 - If there is, then check if there is a .mon
+// 3 - If there is, then return the open property
+// If not for any, it will return undefined
+console.log(restaurant.openingHours?.mon?.open); // undefined and not TypeError
+
+// Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed'; // 0 is falsy, so use nullish
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+// Methods
+console.log(restaurant.order?.(0, 1) ?? `Method does not exist`);
+
+// Arrays
+const users = [{ name: 'Jonas', email: 'hello@jonas.com' }];
+console.log(users[0]?.name ?? 'User array empty');

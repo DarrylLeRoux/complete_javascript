@@ -391,7 +391,7 @@ for (const [i, item] of menu.entries()) {
 /////////////////////////
 /// OPTIONAL CHAINING ///
 /////////////////////////
-
+/*
 console.log(restaurant.openingHours.mon); // undefined
 // if you took this to a deeper level it would return a TypeError
 // restaurant.openingHours.mon.open - this is in essence saying undefined.mon
@@ -422,3 +422,162 @@ console.log(restaurant.order?.(0, 1) ?? `Method does not exist`);
 // Arrays
 const users = [{ name: 'Jonas', email: 'hello@jonas.com' }];
 console.log(users[0]?.name ?? 'User array empty');
+*/
+////////////////////////////
+/// LOOPING OVER OBJECTS ///
+////////////////////////////
+/*
+// Looping over property names - keys
+
+// Object.keys() takes an argument that is a key that holds values
+// It returns an array of however many keys there are
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Looping over property values
+const values = Object.values(openingHours);
+console.log(values);
+
+// Looping over the entries
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we are open at ${open} and close at ${close}`);
+}
+*/
+///////////////////
+/// CHALLENGE 2 ///
+///////////////////
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+//1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+
+for (const [index, player] of game.scored.entries())
+  console.log(`Goal ${index + 1}: ${player}`);
+
+// 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
+
+// 3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+//       Odd of victory Bayern Munich: 1.33
+//       Odd of draw: 3.25
+//       Odd of victory Borrussia Dortmund: 6.5
+// Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
+*/
+////////////
+/// SETS ///
+////////////
+/*
+// No duplicates in an iterable (strings, arrays, etc)
+const orderSet = new Set(['Pasta', 'Pizza', 'Pizza']);
+console.log(orderSet); // {'Pizza', 'Pasta'} // not an array
+
+// Methods
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.add('Garlic Bread'));
+orderSet.delete('Garlic Bread');
+console.log(orderSet);
+
+// Can also loop
+for (const order of orderSet) {
+  console.log(order);
+}
+// turn into an array
+const orderArr = Array.from(orderSet);
+console.log(orderArr);
+*/
+////////////
+/// MAPS ///
+////////////
+const rest = new Map();
+
+// pass key then value
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Italy');
+rest.set(2, 'Portugal');
+rest
+  .set('categories', ['Italian', 'Pizzaria', 'Vegetarian'])
+  .set('open', '12:00')
+  .set('close', '22:00');
+
+// To read
+console.log(rest.get('name')); // Classico Italiano
+console.log(rest.get('categories')); // ['Italian', 'Pizzaria', 'Vegetarian']

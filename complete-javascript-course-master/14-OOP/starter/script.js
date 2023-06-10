@@ -129,3 +129,170 @@ jessica.greet();
 // 2. Classes are first-classes citizens
 // 3. Classes are executed in strict mode - even if the global script isn't
 */
+///////////////////////////
+/// GETTERS AND SETTERS ///
+///////////////////////////
+/*
+const account = {
+  owner: 'jonas',
+  movements: [200, 530, 120, 300],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    return this.movements.push(mov);
+  },
+};
+
+// getters can be called as a property
+console.log(account.latest);
+
+// pass the movement in
+account.latest = 50;
+console.log(account.movements); // [200, 530, 120, 300, 50]
+
+// Getters and Setters in Class Functions
+class Person {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  // set a property that already exists
+  set fullName(name) {
+    if (name.includes(' ')) {
+      // need to use _fullName for a new variable to be set
+      this._fullName = name;
+    } else {
+      console.log(`${name} is not a full name`);
+    }
+  }
+  // change the _fullName to fullName
+  get fullName() {
+    return this._fullName;
+  }
+}
+
+const jessica = new Person('Jessica Davis', 1982);
+
+console.log(jessica.age); // 55
+console.log(jessica);
+*/
+//////////////////////
+/// STATIC METHODS ///
+//////////////////////
+/*
+class Person {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  // set a property that already exists
+  set fullName(name) {
+    if (name.includes(' ')) {
+      // need to use _fullName for a new variable to be set
+      this._fullName = name;
+    } else {
+      console.log(`${name} is not a full name`);
+    }
+  }
+  // change the _fullName to fullName
+  get fullName() {
+    return this._fullName;
+  }
+
+  // adding a static method on a class
+  // cannot be called on an instance such as jessica.hey()
+  static hey() {
+    console.log(`Hey there, my name is ${this.fullName}`);
+  }
+}
+
+// To add a static method to a constructor function, you need to add it to the prototype
+Person.prototype.hey = function () {
+  console.log(`Hey there, my name is ${this.fullName}`);
+};
+
+const jessica = new Person('Jessica David', 2929);
+jessica.hey();
+*/
+///////////////////////
+/// OBJECT.CREATE() ///
+///////////////////////
+/*
+// Sets a prototype to any other object
+const PersonProto = {
+  calcAge() {
+    console.log(2023 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+steven.name = 'Steven';
+steven.birthYear = 1982;
+steven.calcAge();
+console.log(steven.__proto__ === PersonProto); // true
+
+const sara = Object.create(PersonProto);
+sara.init('Sarah', 1979);
+sara.calcAge();
+*/
+///////////////////
+/// CHALLENGE 2 ///
+///////////////////
+/*
+class Car {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(this.speed);
+  }
+
+  brake = function () {
+    this.speed -= 5;
+    console.log(this.speed);
+  };
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+}
+
+const ford = new Car('Ford', 120);
+
+// getters return a value
+console.log(ford.speedUS);
+ford.accelerate();
+
+// setters need to be set like a variable
+ford.speedUS = 50;
+console.log(ford.speed);
+*/
